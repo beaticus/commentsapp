@@ -13,6 +13,7 @@ router.post('/', (req, res, next) => {
     });
 });
 
+// Handle incoming GET requests to /comments 
 router.get('/:commentId', (req, res, next) => {
     const id = req.params.commentId;
     if (id === 'special') {
