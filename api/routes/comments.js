@@ -8,8 +8,15 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    res.status(200).json({
-        message: 'Handling POST requests to /comments'
+    const comment = {
+        postId: req.body.postId,
+        name: req.body.name,
+        email: req.body.email,
+        body: req.body.body
+    };
+    res.status(201).json({
+        message: 'Handling POST requests to /comments',
+        createdComment: comment
     });
 });
 
